@@ -7,7 +7,7 @@
   ```
  <hr> 
  
- <h3> Setup without docker </h3> 
+ <h3> Setup without Docker </h3> 
 
 Clone the repo 
   ```bash 
