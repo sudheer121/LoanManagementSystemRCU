@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=test && node index.js",
+    "start": "node index.js",
     "test": "cross-env NODE_ENV=test && jest --detectOpenHandles",
     "testoh": "jest --detectOpenHandles"
   },
@@ -26,6 +26,6 @@
     "jest": "^26.6.3",
     "jsonwebtoken": "^8.5.1",
     "pg": "^8.5.1",
-    "sequelize": "^6.5.1"
+    "sequelize": "^6.6.2"
   }
 }

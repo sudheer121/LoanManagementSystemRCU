@@ -1,0 +1,27 @@
+version: "3.9"  # optional since v1.27.0
+services:
+    postgres: 
+        image: postgres:13
+        container_name: postgres 
+        environment: 
+            POSTGRES_USER: postgres 
+            POSTGRES_DB: rcu 
+            POSTGRES_HOST_AUTH_METHOD: trust
+        ports: 
+            - '2345:5432'
+
+    app : 
+        build: . 
+        ports: 
+            - '8080:7000'
+        environment:
+            NODE_ENV: development
+            DB_HOST: postgres
+            DB_NAME: rcu
+            DB_USER: postgres 
+            DB_PORT: 5432
+        depends_on: 
+            - postgres 
+
+
+        

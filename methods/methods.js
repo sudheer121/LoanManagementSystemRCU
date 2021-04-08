@@ -3,9 +3,9 @@ const testConnection = async () => {
     try {
       await db.sequelize.authenticate();
       console.log("Connected with database");
-      return 
+      return Promise.resolve();
     } catch (error) {
-        Promise.reject(error)
+        return Promise.reject(error)
     }
 }
 

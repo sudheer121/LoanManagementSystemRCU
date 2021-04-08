@@ -1,7 +1,20 @@
 const { testConnection } = require("./methods/methods"); 
-
 const app = require("./app"); 
-const server = app.listen(process.env.PORT || 7000, function () {
+
+let retries = 5; 
+while(retries) { 
+    try { 
+        await testConnection(); 
+        console.log("Successfully connected");
+        break; 
+    } catch(err) {
+        retries -= 1; 
+        console.log(err); 
+        console.log(`${retries} retries left`); 
+        await new Promise((res) => setTimeout(res,5000)); 
+    }
+}
+
+const server = app.listen(7000, function () {
     console.log("Server running on post 7000");
-    testConnection()
 });
