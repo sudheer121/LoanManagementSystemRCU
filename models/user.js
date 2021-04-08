@@ -2,6 +2,8 @@
 const {
   Model
 } = require('sequelize');
+const { genSaltSync, hashSync } = require('bcryptjs');
+
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     /**
@@ -11,10 +13,14 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       User.hasMany(models.Customer,{
+        foreignKey : 'userId',
+        sourceKey : 'id', 
         onDelete : 'SET NULL' ,
         onUpdate : 'CASCADE'
       });
       User.hasMany(models.Agent,{
+        oreignKey : 'userId',
+        sourceKey : 'id',
         onDelete : 'SET NULL' ,
         onUpdate : 'CASCADE'
       });
@@ -24,7 +30,14 @@ module.exports = (sequelize, DataTypes) => {
   };
   User.init({
     email: DataTypes.STRING,
-    password: DataTypes.STRING
+    password: {
+      type : DataTypes.STRING,
+      set(value) {
+        const salt = genSaltSync(10);
+        this.setDataValue('password', hashSync(value, salt));
+      }
+    },
+    role: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'User',

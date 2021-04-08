@@ -10,7 +10,10 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Customer.belongsTo(models.User); 
+      Customer.belongsTo(models.User,{
+        foreignKey : 'userId',
+        targetKey : 'id'
+      }); 
       Customer.hasOne(models.Account,{
         onDelete : 'SET NULL' ,
         onUpdate : 'CASCADE'
@@ -26,7 +29,8 @@ module.exports = (sequelize, DataTypes) => {
     state: DataTypes.STRING,
     country: DataTypes.STRING,
     gender: DataTypes.STRING,
-    average_salary: DataTypes.DOUBLE
+    average_salary: DataTypes.DOUBLE,
+    userId : DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Customer',

@@ -10,13 +10,25 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Loan.belongsTo(models.User);
-      Loan.belongsTo(models.Agent);
-      Loan.belongsTo(models.LoanType); 
+      Loan.belongsTo(models.Customer,{
+        foreignKey : 'customerId',
+        targetKey  : 'id'
+      });
+      Loan.belongsTo(models.Agent, {
+        foreignKey : 'agentId',
+        targetKey : 'id' 
+      });
+      Loan.belongsTo(models.LoanType, {
+        foreignKey : 'loanType',
+        targetKey : 'id'
+      }); 
       // define association here
     }
   };
   Loan.init({
+    customerId : DataTypes.INTEGER,
+    agentId : DataTypes.INTEGER, 
+    loanType : DataTypes.INTEGER, 
     principalAmount: DataTypes.BIGINT,
     durationMonths: DataTypes.INTEGER,
     emi: DataTypes.DOUBLE,

@@ -10,11 +10,15 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Agent.belongsTo(models.User); 
+      Agent.belongsTo(models.User,{
+        foreignKey : 'userId',
+        targetKey : 'id'
+      }); 
       // define association here
     }
   };
   Agent.init({
+    userId: DataTypes.INTEGER,
     first_name: DataTypes.STRING,
     last_name: DataTypes.STRING,
     salary: DataTypes.STRING,
