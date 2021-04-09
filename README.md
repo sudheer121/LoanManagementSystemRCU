@@ -3,7 +3,8 @@
 <h3> Docker Config </h3> 
 
   ```bash 
-  // todo  
+  docker-compose build
+  docker-compose up 
   ```
  <hr> 
  
