@@ -11,7 +11,7 @@ This docker compose has two containers, the node application and postgres:13.
 After docker compose, the app container is available externally on machine port 8080 and database container is externally available on machine port 2345.  
 While building image it automatically sets up migration and seeds the db using shell script entrypoint.sh. 
 
-Testing postgres container from outside 
+<h4> Testing postgres container from outside </h4> 
 
   ```bash 
   npm i  //install packages locally 
