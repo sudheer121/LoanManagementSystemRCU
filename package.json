@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node --trace-warnings index.js",
     "test": "cross-env NODE_ENV=test && jest --detectOpenHandles",
-    "testoh": "jest --detectOpenHandles"
+    "testdev": "cross-env NODE_ENV=development && jest --detectOpenHandles"
   },
   "jest": {
     "testEnvironment": "node",
