@@ -1,6 +1,7 @@
 # LoanManagementSystemRCU
 
 <h3> Setup with Docker </h3> 
+
 This docker compose has two containers, the node application and postgres:13. 
 
   ```bash 
