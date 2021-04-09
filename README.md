@@ -1,11 +1,14 @@
 # LoanManagementSystemRCU
 
-<h3> Docker Config </h3> 
+<h3> Setup with Docker </h3> 
+This docker compose has two containers, the node application and postgres:13. 
 
   ```bash 
   docker-compose build
   docker-compose up 
   ```
+After docker compose, the app container is available externally on machine port 8080 and database container is externally available on machine port 2345.  
+While building image it automatically sets up migration and seeds the db using shell script entrypoint.sh. 
  <hr> 
  
  <h3> Setup without Docker </h3> 
