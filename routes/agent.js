@@ -7,5 +7,6 @@ const { checkAgent } = require("../middlewares/checkAgent")
 
 router.post("/addLoan", decodeToken, checkAgent, agent.addLoan)
 router.post("/addAccount",decodeToken, checkAgent, agent.addAccount) 
-router.post("/viewCustomers",decodeToken, checkAgent, agent.addAccount) 
+router.post("/viewCustomers",decodeToken, checkAgent, agent.viewCustomers)
+ 
 module.exports = router; 

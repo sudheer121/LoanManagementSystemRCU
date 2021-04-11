@@ -13,7 +13,7 @@ module.exports = {
     database: process.env.DB_NAME || "rcu",
     host: process.env.DB_HOST || "127.0.0.1",
     dialect: "postgres",
-    port : 2345 
+    port : process.env.DB_PORT || 5432 
   },
   production: {
     username: "postgres",

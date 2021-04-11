@@ -15,13 +15,12 @@ app.use((req, res, next) => {
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: false }));
 
-const register = require("./routes/register");
-const login = require("./routes/login");
+const profile = require("./routes/profile");
 const agent = require("./routes/agent");
 const loan = require("./routes/loan");
 const admin = require("./routes/admin");
-app.use("/register",register); 
-app.use("/login",login); 
+
+app.use("/",profile); 
 app.use("/agent", agent); 
 app.use("/admin", admin); 
 app.use("/loan", loan ); // for all 

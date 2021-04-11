@@ -46,9 +46,7 @@ const login = async(req,res) =>{
                 role, userId : user.id 
             }) 
         }); 
-    }
-
-    
+    }    
 }
 
 module.exports = login 

@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node --trace-warnings index.js",
-    "test": "cross-env NODE_ENV=test && jest --detectOpenHandles",
-    "testdev": "cross-env NODE_ENV=development && jest --detectOpenHandles"
+    "test": "cross-env NODE_ENV=test&& jest --detectOpenHandles",
+    "testdev": "SET NODE_ENV=test&& jest --detectOpenHandles"
   },
   "jest": {
     "testEnvironment": "node",

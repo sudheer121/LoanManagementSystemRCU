@@ -28,7 +28,6 @@ const findCustomerId = async(userId) => {
 
 const findAgentId = async(userId) => {
     const res = await db.Agent.findOne({
-        attributes : ['id'],
         where : {
             userId : userId 
         }

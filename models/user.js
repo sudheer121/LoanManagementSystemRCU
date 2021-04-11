@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
         onUpdate : 'CASCADE'
       });
       User.hasMany(models.Agent,{
-        oreignKey : 'userId',
+        foreignKey : 'userId',
         sourceKey : 'id',
         onDelete : 'SET NULL' ,
         onUpdate : 'CASCADE'
