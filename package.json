@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "migrate": "npx sequelize-cli db:migrate",
     "start": "node --trace-warnings index.js",
     "test": "cross-env NODE_ENV=test&& jest --detectOpenHandles",
     "testdev": "SET NODE_ENV=test&& jest --detectOpenHandles"

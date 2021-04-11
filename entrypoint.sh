@@ -1,9 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 
-cd app
+echo "Entrypoint running"
 
+npm install 
 npx sequelize-cli db:migrate
-npx sequelize-cli db:seed:all 
-
-npm install
-npm start
+npx sequelize-cli db:seed:all
+node index.js
