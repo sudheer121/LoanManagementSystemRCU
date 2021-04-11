@@ -33,6 +33,7 @@ const findAgentId = async(userId) => {
             userId : userId 
         }
     })
+    return res; 
 }
 
 const findByEmail = async(email) => {

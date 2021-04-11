@@ -1,4 +1,6 @@
 const giveHash = require("../methods/giveHash"); 
+const giveUID = require("../methods/giveUID"); 
+
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.bulkInsert('Users', [{
@@ -9,21 +11,21 @@ module.exports = {
       updatedAt: new Date(),
       id : 1
     },{
-      email: 'abc@agent.com',
+      email: 'ramakant@agent.com',
       password : giveHash('agentpass'),
       role: 'agent',
       createdAt: new Date(),
       updatedAt: new Date(),
       id : 2 
     },{
-      email: 'abc@customer.com',
+      email: 'ramesh@customer.com',
       password : giveHash('customerpass'),
       role: 'customer',
       createdAt: new Date(),
       updatedAt: new Date(),
       id : 3 
     },{
-      email: 'sudheer@user.com',
+      email: 'sudheer@customer.com',
       password : giveHash('userpass'),
       role: 'user',
       createdAt: new Date(),
@@ -59,7 +61,7 @@ module.exports = {
       last_name : "Pandit",
       userId : 2,
       salary : "80000",
-      cardId : "12345563",
+      cardId : giveUID(),
       createdAt: new Date(),
       updatedAt: new Date() 
     }])
@@ -68,7 +70,7 @@ module.exports = {
       id :  1,
       type : "workaccount",
       balance : 30000,
-      accountID : "12344321",
+      accountID : giveUID(),
       customerId : 1,
       createdAt: new Date(),
       updatedAt: new Date() 
